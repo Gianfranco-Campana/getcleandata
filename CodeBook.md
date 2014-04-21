@@ -104,7 +104,7 @@ and rename the second and third columns as Activity and Activity_Label to comple
 names(ntid)[2:3] <- c("Activity","Activity_Label")
 ```
 
-The last target is to build a second tidy dataset with the average of each  variable for each activity and each subject. To do this we use the reshape2 package and the aggregate function:
+The last target is to build a second tidy dataset with the average of each variable for each activity and each subject. To do this we use the reshape2 package and the aggregate function:
 ```{r}
 library(reshape2)
 aggr <- aggregate(. ~ Subject + Activity + Activity_Label, data = ntid, mean)

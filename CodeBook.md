@@ -28,7 +28,7 @@ The directory /data is created, if it not exists.
 ```{r}
 if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-#download.file(fileUrl, destfile="./data/FUCI_Dataset.zip")
+download.file(fileUrl, destfile="./data/FUCI_Dataset.zip")
 unzip("./data/FUCI_Dataset.zip", exdir = "./data", overwrite = TRUE)
 
 ```
@@ -104,7 +104,7 @@ and rename the second and third columns as Activity and Activity_Label to comple
 names(ntid)[2:3] <- c("Activity","Activity_Label")
 ```
 
-The last target is to build a second tidy dataset with the average of each  variable for each activity and each subject. To do this we use the reshape2 package and the aggregate function:
+The last target is to build a second tidy dataset with the average of each variable for each activity and each subject. To do this we use the reshape2 package and the aggregate function:
 ```{r}
 library(reshape2)
 aggr <- aggregate(. ~ Subject + Activity + Activity_Label, data = ntid, mean)

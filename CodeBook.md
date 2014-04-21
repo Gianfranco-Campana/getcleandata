@@ -24,7 +24,7 @@
 
 The archives are downloaded, unzipped and then saved in the directory: ./data/FUCI_Dataset.
 
-The directory /data is created, if it not exists.
+The directory ./data is created, if it not exists.
 ```{r}
 if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"

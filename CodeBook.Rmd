@@ -69,7 +69,10 @@ and then rename all the columns of the complete dataset using that vector, excep
 names(df_tot)[3:563] <- cfeatures
 ```
 
-Here a first, tidy dataset is building filtering all the column with a mean or a std value: 
+Here a first, tidy dataset is building filtering all the column with a mean or a std value.
+
+All the features column names, have an intrinsic and distinct meaning, with no exact overlapping between them, therefore the choice adopted is to mantain all the columns with a "mean" or "sdt" naming, to preserve all the information in agreement with the original task.
+
 ```{r}
 tid <- cbind(
         df_tot[,1:2],
